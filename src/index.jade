@@ -12,6 +12,8 @@ html(ng-app='app', ng-controller='IndexCtrl as index')
     script(src='index.js')
 
 body
+  md-button.md-fab.md-fab-bottom-right(aria-label='add new log') Add
+
   md-content
     md-card(ng-repeat='day in index.days')
       md-card-content
@@ -25,4 +27,4 @@ body
           md-list-item {{intake.when | momentTime}}
           md-list-item {{intake.quantity}}
           md-list-item
-            md-button edit
+            md-button.md-primary edit

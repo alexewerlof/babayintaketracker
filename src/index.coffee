@@ -13,7 +13,6 @@ days = [
 
 class IndexCtrl
   constructor: () ->
-    @foo = 'bar'
     @days = days
 
 
