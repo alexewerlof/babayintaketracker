@@ -13,10 +13,10 @@ It uses AngularMaterial for GUI.
 
 You need Node.js, JDK and Android SDK.
 
-Install the required global tools:
+Install the required global goodies:
 
 ```
-$ npm install -g gulp bower cordova
+$ npm install -g gulp bower cordova http-server
 ```
 
 Then install the local dependencies:
@@ -33,7 +33,12 @@ This will first install npm and bower packages.
 $ gulp build
 ```
 
-This should populate the `www` directory.
+This should populate the `www` directory and at this point you can serve
+it like a standard web page:
+
+```
+$ http-server www
+```
 
 Then prepare and compile the the cordova app:
 
