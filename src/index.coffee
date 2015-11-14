@@ -15,6 +15,9 @@ class IndexCtrl
   constructor: () ->
     @days = days
 
+  dayTotal: (day) ->
+    _.sum day.intakes, 'quantity'
+
 
 angular.module 'app', ['ngMaterial']
 .filter 'momentDate', () -> (m) -> m.format 'LL'
