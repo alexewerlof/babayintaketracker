@@ -1,6 +1,23 @@
+days = [
+  {
+    date: moment(),
+    intakes: [
+      {
+        what: 'milk'
+        when: moment()
+        quantity: 200
+      }
+    ]
+  }
+]
+
 class IndexCtrl
-  foo: 'bar'
-  constructor: () -> @foo = 'bar'
+  constructor: () ->
+    @foo = 'bar'
+    @days = days
+
 
 angular.module 'app', ['ngMaterial']
-.controller('IndexCtrl', IndexCtrl)
+.filter 'momentDate', () -> (m) -> m.format 'LL'
+.filter 'momentTime', () -> (m) -> m.format 'LT'
+.controller 'IndexCtrl', IndexCtrl

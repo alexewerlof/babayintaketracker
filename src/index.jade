@@ -2,6 +2,9 @@ doctype html
 html(ng-app='app', ng-controller='IndexCtrl as index')
   head
     link(rel='stylesheet', href='bower/angular-material/angular-material.css')
+    link(rel='stylesheet', href='index.css')
+    script(src='bower/lodash/lodash.js')
+    script(src='bower/moment/moment.js')
     script(src='bower/angular/angular.js')
     script(src='bower/angular-aria/angular-aria.js')
     script(src='bower/angular-animate/angular-animate.js')
@@ -9,5 +12,17 @@ html(ng-app='app', ng-controller='IndexCtrl as index')
     script(src='index.js')
 
 body
-  | {{index.foo}}
-  md-button hello
+  md-content
+    md-card(ng-repeat='day in index.days')
+      md-card-content
+        h2.md-title {{day.date | momentDate}}
+        md-list(
+          ng-repeat='intake in day.intakes'
+          layout='row'
+          layout-align='space-between center'
+        )
+          md-list-item {{intake.what}}
+          md-list-item {{intake.when | momentTime}}
+          md-list-item {{intake.quantity}}
+          md-list-item
+            md-button edit
