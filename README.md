@@ -57,3 +57,18 @@ for more info.
 If there are any issues with Cordova
 [check this]
 (https://www.npmjs.com/package/cordova#known-issues-and-troubleshooting).
+
+# Acknowledgement
+
+The background is designed by
+[Freepik](http://www.freepik.com)
+
+You are free to use this image:
+
+- For both personal and commercial projects and to modify it.
+- In a website or presentation template or application or as part of your design.
+
+You are not allowed to:
+
+- Sub-license, resell or rent it.
+- Include it in any online or offline archive or database.
