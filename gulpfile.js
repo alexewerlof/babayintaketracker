@@ -4,9 +4,10 @@ var gulp = require('gulp');
 var sourcemaps = require('gulp-sourcemaps');
 var mainBowerFiles = require('gulp-main-bower-files');
 var changed = require('gulp-changed');
-var stylus = require('gulp-stylus');
 var del = require('del');
-const babel = require('gulp-babel');
+var stylus = require('gulp-stylus');
+var jade = require('gulp-jade');
+var coffee = require('gulp-coffee');
 
 var options = {
   dist: 'www/',
@@ -25,12 +26,10 @@ gulp.task('build:bower', () => {
 });
 
 gulp.task('build:js', () => {
-  return gulp.src(options.src + '/js/**/*.js', {base:options.src})
+  return gulp.src(options.src + '**/*.coffee', {base:options.src})
     .pipe(changed(options.dist))
     .pipe(sourcemaps.init())
-    .pipe(babel({
-        presets: ['es2015']
-    }))
+    .pipe(coffee())
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(options.dist));
 });
@@ -38,13 +37,16 @@ gulp.task('build:js', () => {
 gulp.task('build:css', () => {
   return gulp.src(options.src + '**/*.styl', {base:options.src})
     .pipe(changed(options.dist), {extension: '.css'})
+    .pipe(sourcemaps.init())
     .pipe(stylus({'include css': true}))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(options.dist));
 });
 
 gulp.task('build:html', () => {
-  return gulp.src(options.src + '**/*.html', {base:options.src})
-    .pipe(changed(options.dist))
+  return gulp.src(options.src + '**/*.jade', {base:options.src})
+    .pipe(changed(options.dist), {extension: '.html'})
+    .pipe(jade({pretty: true}))
     .pipe(gulp.dest(options.dist));
 });
 

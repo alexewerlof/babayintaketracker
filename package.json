@@ -4,6 +4,7 @@
   "description": "A small app for tracking baby milk/water intake",
   "main": "gulpfile.js",
   "scripts": {
+    "postinstall": "bower install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Userpixel",
@@ -17,6 +18,8 @@
     "gulp": "^3.9.0",
     "gulp-babel": "^6.0.0",
     "gulp-changed": "^1.3.0",
+    "gulp-coffee": "^2.3.1",
+    "gulp-jade": "^1.1.0",
     "gulp-main-bower-files": "^1.2.3",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-stylus": "^2.1.0",
