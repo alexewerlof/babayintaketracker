@@ -12,7 +12,8 @@ html(ng-app='app', ng-controller='IndexCtrl as index')
     script(src='index.js')
 
 body
-  md-button.md-fab.md-fab-bottom-right(aria-label='add new log') Add
+  md-button.md-fab.md-fab-bottom-right(
+    aria-label='add new log' ng-click='index.add($event)') Add
 
   md-content
     md-card(ng-repeat='day in index.days')
