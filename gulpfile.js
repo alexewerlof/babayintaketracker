@@ -51,7 +51,11 @@ gulp.task('build:html', () => {
 });
 
 gulp.task('build:img', () => {
-  return gulp.src(options.src + 'img/**/*', {base:options.src})
+  return gulp.src([
+    options.src + '**/*.jpg',
+    options.src + '**/*.png',
+    options.src + '**/*.svg'
+  ], {base:options.src})
     .pipe(changed(options.dist))
     .pipe(gulp.dest(options.dist));
 });
