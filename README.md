@@ -1,2 +1,4 @@
-# babayintaketracker
-A small app for tracking baby milk/water intake
+# Introduction
+
+This is a small cordova application that I made to track my own baby's
+liquid intake.
