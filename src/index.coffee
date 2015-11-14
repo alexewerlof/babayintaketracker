@@ -13,6 +13,7 @@ days = [
 
 class AddCtrl
   constructor: () ->
+    @whats = ['Milk', 'Water', 'Formula', 'Cereal', 'Whiskey']
 
 class IndexCtrl
   constructor: (@$mdDialog) ->
@@ -24,6 +25,7 @@ class IndexCtrl
   add: (ev) ->
     @$mdDialog.show {
       controller: AddCtrl
+      controllerAs: 'addItem'
       templateUrl: 'add.html'
       parent: angular.element document.body
       targetEvent: ev

@@ -1,1 +1,15 @@
-md-dialog(aria-label='Add a log item') yoho!
+md-dialog(aria-label='Add a log item' style='width:80vw')
+  md-dialog-content
+    .md-dialog-content
+      md-datepicker(ng-model='addItem.when' md-placeholder='When?')
+      md-input-container(flex)
+        label What?
+        md-select(ng-model='addItem.what')
+          md-option(
+            ng-repeat='what in addItem.whats' 
+            value='{{what}}') {{what}}
+
+    md-dialog-actions(layout='row')
+      md-button.md-warn Delete
+      span.flex
+      md-button.md-primary.md-raised(md-autofocus) Save
